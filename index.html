@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои приложения</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eee;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 40px 0;
+        }
+
+        .app-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .app-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .app-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .app-description {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .app-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        .btn-download {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-download:hover {
+            background: #45a049;
+            transform: scale(1.02);
+        }
+
+        .btn-download.paid {
+            background: #ff9800;
+        }
+
+        .btn-download.paid:hover {
+            background: #fb8c00;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .badge-free {
+            background: #4CAF50;
+        }
+
+        .badge-paid {
+            background: #ff9800;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+        a {
+            color: #4CAF50;
+        }
+
+        @media (max-width: 768px) {
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📱 Приложения от Hoji Anvar</h1>
+            <p class="subtitle">Бесплатные и условно-бесплатные программы для Android и Windows</p>
+        </header>
+
+        <div class="apps-grid">
+            <!-- Приложение 1: PonyApp -->
+            <div class="app-card">
+                <div class="app-icon">🐴</div>
+                <div class="app-title">PonyApp</div>
+                <div class="app-description">Тестирование знаний по школьным предметам. Тесты, статистика, адаптивный режим.</div>
+                <div class="app-meta">
+                    <span>Версия 1.0</span>
+                    <span class="badge badge-free">Бесплатно</span>
+                </div>
+                <a href="apps/encript_pony.apk" class="btn-download">📲 Скачать APK</a>
+            </div>
+
+            <!-- Приложение 2: HadithBukhari -->
+            <div class="app-card">
+                <div class="app-icon">📖</div>
+                <div class="app-title">Сахих аль-Бухари</div>
+                <div class="app-description">Полный сборник хадисов на 5 языках с озвучкой таджикского текста.</div>
+                <div class="app-meta">
+                    <span>Версия 2.0</span>
+                    <span class="badge badge-free">Бесплатно</span>
+                </div>
+                <a href="apps/pony_encript.apk" class="btn-download">📲 Скачать APK</a>
+            </div>
+
+            <!-- Приложение 3 -->
+            <div class="app-card">
+                <div class="app-icon">📚</div>
+                <div class="app-title">Исламский календарь</div>
+                <div class="app-description">Намаз, пост, праздники, кибла, зикр. Удобный интерфейс.</div>
+                <div class="app-meta">
+                    <span>Версия 1.2</span>
+                    <span class="badge badge-free">Бесплатно</span>
+                </div>
+                <a href="apps/islamic_calendar.apk" class="btn-download">📲 Скачать APK</a>
+            </div>
+
+            <!-- Приложение 4 -->
+            <div class="app-card">
+                <div class="app-icon">🎓</div>
+                <div class="app-title">English для начинающих</div>
+                <div class="app-description">Английский язык с нуля. Уроки, упражнения, диалоги.</div>
+                <div class="app-meta">
+                    <span>Версия 1.0</span>
+                    <span class="badge badge-free">Бесплатно</span>
+                </div>
+                <a href="apps/english.apk" class="btn-download">📲 Скачать APK</a>
+            </div>
+
+            <!-- Приложение 5 (платное) -->
+            <div class="app-card">
+                <div class="app-icon">⭐</div>
+                <div class="app-title">Premium: 99 имён Аллаха</div>
+                <div class="app-description">С анимацией, озвучкой, транскрипцией и переводом.</div>
+                <div class="app-meta">
+                    <span>Версия 1.0</span>
+                    <span class="badge badge-paid">Платное</span>
+                </div>
+                <a href="#" class="btn-download paid" onclick="alert('Для получения ключа напишите на email: apps@example.com')">💰 Купить лицензию</a>
+            </div>
+
+            <!-- Приложение 6 -->
+            <div class="app-card">
+                <div class="app-icon">🧮</div>
+                <div class="app-title">Калькулятор долей</div>
+                <div class="app-description">Расчёт наследства по исламскому праву. Просто и понятно.</div>
+                <div class="app-meta">
+                    <span>Версия 1.1</span>
+                    <span class="badge badge-free">Бесплатно</span>
+                </div>
+                <a href="apps/inheritance.apk" class="btn-download">📲 Скачать APK</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Hoji Anvar. Все права защищены.</p>
+            <p>По вопросам лицензирования и сотрудничества: <a href="mailto:apps@example.com">apps@example.com</a></p>
+            <p><a href="https://t.me/hoji_anvar">Telegram канал</a> | <a href="privacy.html">Политика конфиденциальности</a></p>
+        </div>
+    </div>
+</body>
+</html>
